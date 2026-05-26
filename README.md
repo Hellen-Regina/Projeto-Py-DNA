@@ -1,5 +1,4 @@
 # Projeto-Py-DNA
-##DESCRIÇÃO
 
 ## Objetivos
 

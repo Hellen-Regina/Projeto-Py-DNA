@@ -1,48 +1,52 @@
-# 🧬Projeto-Py-DNA
-Repositório desenvolvido durante o curso de Python das PyLadies. O objetivo deste projeto é aplicar conceitos básicos de programação em Python para resolver problemas simples de bioinformática relacionados à análise e manipulação de sequências biológicas. 
+# Projeto-Py-DNA
 
-## 📚Objetivos
+Projeto das PyLadies para análise de sequências de DNA e design de primers com **Primer3**.
 
-- Praticas lógica de programação utilizando Python.
-- Aplicar conceitos básicos de bioinformatica.
-- Desenvolver projetos colaborativos utilizando GitHub. 
+## Estrutura
 
-## ⚡Projetos em desenvolvimento 
-#### **1. Analisador de DNA**
-Progrma que recebe uma sequência de DNA e realiza análises básicas. 
+```
+Projeto-Py-DNA/
+├── dados/              # Coloque aqui seus .fasta ou .txt
+├── resultados/         # CSVs gerados pelo modo lote
+├── desenho_primers.py  # Lógica + modo interativo (terminal)
+├── main.py             # Modo lote (vários arquivos → tabela CSV)
+└── requirements.txt
+```
 
-**Funcionalidades:**
-- Contagem de bases A,T,C,G. 
-- Cálculo da procentagem de cada base. 
-- Determinação do tamanho da sequência.
+## Instalação
 
-#### **2. Tradutor DNA ➝ RNA ➝ Proteína** 
-Programa que simulo etapas do fluxo da informação genética. 
+```bash
+pip install -r requirements.txt
+```
 
-**Funcionalidades:**
-- Conrsão de DNA em RNA.
--  Separação do RNA em códons.
-- Tradução dos códons em aminoácidos.
-- Exibição da sequência proteica resultante. 
+## Como usar
 
-#### **3. Detector de mutações**
-Programa que compara duas sequências de DNA e identificar diferenças entre elas. 
+### Modo lote (planilhas)
 
-**Funcionalidades**
-- Detecção de substituições.
-- Identificação de inserções.
-- Identificação de deleções.
-- Exibição da posição e do tipo da mutação encontrada.
+Processa **todos** os arquivos de `dados/` e salva CSV em `resultados/`:
 
-## 💻Tecnologias utilizadas 
-- Python 
-- Git
-- GitHub
-- Visual Studio Code 
+```bash
+python main.py
+```
 
-## 📁Estrutura do projeto 
+Cada CSV traz: par de primers, Tm forward/reverse e tamanho do produto (pb).
 
-## 👩‍🔬Integrantes
+### Modo interativo (terminal)
 
-## 🚀Próximos Passos 
+Escolhe **um** arquivo e vê o resultado na tela:
 
+```bash
+python desenho_primers.py
+```
+
+## Formato dos arquivos
+
+- **FASTA**: cabeçalho com `>` e sequência nas linhas seguintes
+- **TXT**: só a sequência (A, T, C, G)
+- Mínimo recomendado: ~100 bases válidas
+
+## Tecnologias
+
+- Python 3
+- pandas
+- primer3-py
